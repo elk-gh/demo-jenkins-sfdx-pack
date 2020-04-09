@@ -110,7 +110,7 @@ node {
             // -------------------------------------------------------------------------
             // Create package version.
             // -------------------------------------------------------------------------
-
+            /*
             stage('Create Package Version') {
                 if (isUnix()) {
                     output = sh returnStdout: true, script: "${toolbelt}/sfdx force:package:version:create --package ${PACKAGE_NAME} --installationkeybypass --wait 10 --json --targetdevhubusername HubOrg"
@@ -136,7 +136,7 @@ node {
             // -------------------------------------------------------------------------
             // Create new scratch org to install package to.
             // -------------------------------------------------------------------------
-
+            
             stage('Create Package Install Scratch Org') {
                 rc = bat returnStatus: true, script: "\"${toolbelt}\" force:org:create --targetdevhubusername HubOrg --setdefaultusername --definitionfile config/project-scratch-def.json --setalias installorg --wait 10 --durationdays 1"
                 if (rc != 0) {
@@ -191,14 +191,15 @@ node {
                     error 'Salesforce package install scratch org deletion failed.'
                 }
             }
+            */
         }
     }
 }
-
+/*
 def command(script) {
     if (isUnix()) {
         return sh(returnStatus: true, script: script);
     } else {
         return bat(returnStatus: true, script: script);
     }
-}
+}*/
