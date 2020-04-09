@@ -113,8 +113,8 @@ node {
                 if (isUnix()) {
                     output = sh returnStdout: true, script: "${toolbelt}/sfdx force:package:version:create --package ${PACKAGE_NAME} --installationkeybypass --wait 10 --json --targetdevhubusername HubOrg"
                 } else {
-                    output = bat returnStatus: true, script: "\"${toolbelt}\" force:package:version:create --package ${PACKAGE_NAME} --installationkeybypass --wait 10 --json --targetdevhubusername HubOrg").trim()
-                    output = output.readLines().drop(1).join(" ")
+                    output = bat returnStatus: true, script: "\"${toolbelt}\" force:package:version:create --package ${PACKAGE_NAME} --installationkeybypass --wait 10 --json --targetdevhubusername HubOrg"
+                    output = output.trim().readLines().drop(1).join(" ")
                 }
 
                 // Wait 5 minutes for package replication.
