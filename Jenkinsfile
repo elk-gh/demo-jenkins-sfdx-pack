@@ -46,7 +46,7 @@ node {
                 }
             }
 
-
+            /*Comment to avoid Scratch  Org Limit per Day
             // -------------------------------------------------------------------------
             // Create new scratch org to test your code.
             // -------------------------------------------------------------------------
@@ -105,7 +105,7 @@ node {
                     error 'Salesforce test scratch org deletion failed.'
                 }
             }
-
+            */
 
             // -------------------------------------------------------------------------
             // Create package version.
