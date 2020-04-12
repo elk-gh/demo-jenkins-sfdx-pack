@@ -66,6 +66,9 @@ node {
                 if (rc != 0) {
                     error 'Salesforce test scratch org creation failed.'
                 }
+                
+                bat returnStatus: true, script: "\"${toolbelt}\" force:org:open"
+
             }
 
 
