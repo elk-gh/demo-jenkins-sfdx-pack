@@ -92,15 +92,15 @@
     [
         "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack\\force-app\\main\\default\\classes\\MyTest.cls",
         {
-            "state": "u",
             "sourcePath": "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack\\force-app\\main\\default\\classes\\MyTest.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 309,
             "modifiedTime": 1586705165170,
             "changeTime": 1586705165170,
-            "isWorkspace": false,
-            "contentHash": "e925ce68b51d14a2dd70da5e95ace6741c4eb24a"
+            "contentHash": "e925ce68b51d14a2dd70da5e95ace6741c4eb24a",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false
         }
     ],
     [
@@ -226,15 +226,15 @@
     [
         "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack",
         {
-            "state": "u",
             "sourcePath": "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
-            "modifiedTime": 1586706172842,
+            "modifiedTime": 1586706354798,
             "changeTime": 1586706172842,
-            "isWorkspace": true,
-            "contentHash": "c7924aa0dab7cef9c1e1130cfa148f3ab21bbb19"
+            "contentHash": "c7924aa0dab7cef9c1e1130cfa148f3ab21bbb19",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": true
         }
     ],
     [

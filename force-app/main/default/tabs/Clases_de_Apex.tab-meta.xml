@@ -2,5 +2,5 @@
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <label>Clases de Apex</label>
     <motif>Custom42: Treasure chest</motif>
-    <page>ListClasses</page>
+    <page>MyPage</page>
 </CustomTab>

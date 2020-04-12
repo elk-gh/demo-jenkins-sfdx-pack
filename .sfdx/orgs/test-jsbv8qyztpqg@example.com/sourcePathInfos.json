@@ -32,16 +32,15 @@
     [
         "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack\\force-app\\main\\default",
         {
+            "state": "u",
             "sourcePath": "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack\\force-app\\main\\default",
             "isDirectory": true,
-            "size": 0,
-            "modifiedTime": 1586705492746,
-            "changeTime": 1586671790124,
-            "contentHash": "786e24419bdc86f937c0f1d74082507b8b1341d3",
             "isMetadataFile": false,
-            "state": "u",
+            "size": 0,
+            "modifiedTime": 1586706259970,
+            "changeTime": 1586706259970,
             "isWorkspace": false,
-            "isArtifactRoot": true
+            "contentHash": "805f81bb016a9093ce6394f34df49808d1d1b8df"
         }
     ],
     [
@@ -92,15 +91,15 @@
     [
         "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack\\force-app\\main\\default\\classes\\MyTest.cls",
         {
-            "state": "u",
             "sourcePath": "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack\\force-app\\main\\default\\classes\\MyTest.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 309,
             "modifiedTime": 1586705165170,
             "changeTime": 1586705165170,
-            "isWorkspace": false,
-            "contentHash": "e925ce68b51d14a2dd70da5e95ace6741c4eb24a"
+            "contentHash": "e925ce68b51d14a2dd70da5e95ace6741c4eb24a",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": false
         }
     ],
     [
@@ -226,15 +225,15 @@
     [
         "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack",
         {
-            "state": "u",
             "sourcePath": "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
-            "modifiedTime": 1586706172842,
+            "modifiedTime": 1586706354798,
             "changeTime": 1586706172842,
-            "isWorkspace": true,
-            "contentHash": "c7924aa0dab7cef9c1e1130cfa148f3ab21bbb19"
+            "contentHash": "c7924aa0dab7cef9c1e1130cfa148f3ab21bbb19",
+            "isMetadataFile": false,
+            "state": "u",
+            "isWorkspace": true
         }
     ],
     [
@@ -474,14 +473,14 @@
     [
         "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack\\force-app\\main\\default\\tabs\\Clases_de_Apex.tab-meta.xml",
         {
+            "state": "u",
             "sourcePath": "c:\\Users\\elkin\\Documents\\Projects\\demo-jenkins-sfdx-pack\\force-app\\main\\default\\tabs\\Clases_de_Apex.tab-meta.xml",
             "isDirectory": false,
-            "size": 219,
-            "modifiedTime": 1586671957757,
-            "changeTime": 1586671957757,
-            "contentHash": "e0a8ca9f5bc9724c4b8861635ca383cb1d82284c",
             "isMetadataFile": true,
-            "state": "u"
+            "size": 214,
+            "modifiedTime": 1586706707048,
+            "changeTime": 1586706707048,
+            "contentHash": "98ffd400d7d5582fd60efcf6dd636d9264a3ba55"
         }
     ],
     [
