@@ -5,10 +5,10 @@
             "default": true
         },
         {
-            "path": "force-app/main/default",
-            "package": "Jenkins",
-            "versionName": "Jenkins - Winter '19",
-            "versionNumber": "1.0.0.NEXT",
+            "path": "force-app/main/default/",
+            "package": "Jenkins Demo DX",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
             "default": false
         }
     ],
@@ -16,7 +16,8 @@
     "sfdcLoginUrl": "https://login.salesforce.com",
     "sourceApiVersion": "48.0",
     "packageAliases": {
-        "Jenkins": "0Ho0N000000CaT3SAK",
-        "Jenkins@1.0.0-1": "04t0N000001E1ksQAC"
+        "Jenkins Demo DX": "0Ho4R000000004nSAA",
+        "Jenkins Demo DX@0.1.0-1": "04t4R000000g9pHQAQ",
+        "Jenkins Demo DX@0.1.0-2": "04t4R000000g9pMQAQ"
     }
 }
