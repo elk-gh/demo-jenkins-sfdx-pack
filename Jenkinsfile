@@ -32,21 +32,31 @@ node {
     withEnv(["HOME=${env.WORKSPACE}"]) {
         
         withCredentials([file(credentialsId: SERVER_KEY_CREDENTIALS_ID, variable: 'server_key_file')]) {
-
+            
+            // -------------------------------------------------------------------------
+            // Logout from Salesforce to obtain a new session. Avoid ENOENT SFDX CLI Error
+            // -------------------------------------------------------------------------
+            stage('Logout from Salesforce') {
+            //Force logout to avoid ERROR running force:org:create:  ENOENT: no such file or directory, open 'C:\Program Files (x86)\Jenkins\workspace\Jenkins_Webhook_master@tmp\secretFiles\1fdeef11-05b5-446b-b41b-8818739303b3\server.key'
+                rc = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:logout --targetusername  ${SF_USERNAME} --noprompt"
+                if (rc != 0) {
+                    error 'Salesforce logout failed.'
+                }
+            }
+            
             // -------------------------------------------------------------------------
             // Authorize the Dev Hub org with JWT key and give it an alias.
             // -------------------------------------------------------------------------
 
             stage('Authorize DevHub') {
-                //Force logout to avoid ERROR running force:org:create:  ENOENT: no such file or directory, open 'C:\Program Files (x86)\Jenkins\workspace\Jenkins_Webhook_master@tmp\secretFiles\1fdeef11-05b5-446b-b41b-8818739303b3\server.key'
-                rb = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:logout --targetusername  ${SF_USERNAME} --noprompt"
                 rc = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:jwt:grant --instanceurl ${SF_INSTANCE_URL} --clientid ${SF_CONSUMER_KEY} --username ${SF_USERNAME} --jwtkeyfile \"${server_key_file}\" --setdefaultdevhubusername --setalias HubOrg"
                 if (rc != 0) {
                     error 'Salesforce dev hub org authorization failed.'
                 }
             }
 
-            /*Comment to avoid Scratch  Org Limit per Day
+            //Comment to avoid Scratch  Org Limit per Day
+            
             // -------------------------------------------------------------------------
             // Create new scratch org to test your code.
             // -------------------------------------------------------------------------
@@ -93,8 +103,9 @@ node {
                     error 'Salesforce unit test run in test scratch org failed.'
                 }
             }
-
-
+            
+            //Comment to not delete the scratch org
+            /*
             // -------------------------------------------------------------------------
             // Delete test scratch org.
             // -------------------------------------------------------------------------
@@ -106,11 +117,12 @@ node {
                 }
             }
             */
-
+            
+            //Comment to not create a package
+            /*
             // -------------------------------------------------------------------------
             // Create package version.
             // -------------------------------------------------------------------------
-            /*
             stage('Create Package Version') {
                 if (isUnix()) {
                     output = sh returnStdout: true, script: "${toolbelt}/sfdx force:package:version:create --package ${PACKAGE_NAME} --installationkeybypass --wait 10 --json --targetdevhubusername HubOrg"
@@ -195,6 +207,8 @@ node {
         }
     }
 }
+
+// Not working for window
 /*
 def command(script) {
     if (isUnix()) {
