@@ -59,7 +59,7 @@ node {
 
             
             //Comment to avoid Scratch  Org Limit per Day
-            /*
+            
             // -------------------------------------------------------------------------
             // Create new scratch org to test your code.
             // -------------------------------------------------------------------------
@@ -133,7 +133,7 @@ node {
                     error 'Salesforce cannot get scratch org open link.'
                 }
             }
-            */
+            
             
             //Comment to not delete the scratch org
             /*
@@ -150,7 +150,7 @@ node {
             */
             
             //Comment to not create a package
-            
+            /*
             // -------------------------------------------------------------------------
             // Create package version.
             // -------------------------------------------------------------------------
@@ -233,7 +233,7 @@ node {
                     error 'Salesforce cannot get scratch org open link.'
                 }
             }
-            
+            */
 
             //Comment to not delete the scratch org
             /*
