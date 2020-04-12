@@ -14,6 +14,7 @@
     <label>Demo Jenkins</label>
     <navType>Standard</navType>
     <tabs>Curso__c</tabs>
+    <tabs>Clases_de_Apex</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Demo_Jenkins_UtilityBar</utilityBar>
 </CustomApplication>
