@@ -33,6 +33,7 @@ node {
         
         withCredentials([file(credentialsId: SERVER_KEY_CREDENTIALS_ID, variable: 'server_key_file')]) {
             
+            
             // -------------------------------------------------------------------------
             // Logout from Salesforce to obtain a new session. Avoid ENOENT SFDX CLI Error
             // -------------------------------------------------------------------------
@@ -43,6 +44,7 @@ node {
                     error 'Salesforce logout failed.'
                 }
             }
+            
             
             // -------------------------------------------------------------------------
             // Authorize the Dev Hub org with JWT key and give it an alias.
@@ -55,6 +57,7 @@ node {
                 }
             }
 
+            
             //Comment to avoid Scratch  Org Limit per Day
             
             // -------------------------------------------------------------------------
@@ -71,17 +74,6 @@ node {
 
             }
             
-            // -------------------------------------------------------------------------
-            // Get link to open new scratch org.
-            // -------------------------------------------------------------------------
-
-            stage('Get Link To Open Scratch Org') {
-                rc = bat returnStatus: true, script: "\"${toolbelt}\" force:org:open"
-                if (rc != 0) {
-                    error 'Salesforce cannot get scratch org open link.'
-                }
-            }
-
 
             // -------------------------------------------------------------------------
             // Display test scratch org info.
@@ -105,7 +97,19 @@ node {
                     error 'Salesforce push to test scratch org failed.'
                 }
             }
+            
+            
+            // -------------------------------------------------------------------------
+            // Assign permission set.
+            // -------------------------------------------------------------------------
 
+            stage('Assign permission set') {
+                rc = bat returnStatus: true, script: "\"${toolbelt}\" force:user:permset:assign --permsetname Demo_Jenkins --targetusername ciorg"
+                if (rc != 0) {
+                    error 'Salesforce assign permission set failed.'
+                }
+            }       
+            
 
             // -------------------------------------------------------------------------
             // Run unit tests in test scratch org.
@@ -117,6 +121,19 @@ node {
                     error 'Salesforce unit test run in test scratch org failed.'
                 }
             }
+            
+            
+            // -------------------------------------------------------------------------
+            // Get link to open new scratch org.
+            // -------------------------------------------------------------------------
+
+            stage('Get Link To Open Scratch Org') {
+                rc = bat returnStatus: true, script: "\"${toolbelt}\" force:org:open"
+                if (rc != 0) {
+                    error 'Salesforce cannot get scratch org open link.'
+                }
+            }
+            
             
             //Comment to not delete the scratch org
             /*
