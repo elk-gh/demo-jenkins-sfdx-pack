@@ -39,6 +39,7 @@ node {
             // -------------------------------------------------------------------------
             stage('Logout from Salesforce') {
             //Force logout to avoid ERROR running force:org:create:  ENOENT: no such file or directory, open 'C:\Program Files (x86)\Jenkins\workspace\Jenkins_Webhook_master@tmp\secretFiles\1fdeef11-05b5-446b-b41b-8818739303b3\server.key'
+                bat returnStatus: true, script: "\"${toolbelt}\" force:config:set defaultusername=${SF_USERNAME}"
                 rc = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:logout --targetusername  ${SF_USERNAME} --noprompt"
                 if (rc != 0) {
                     error 'Salesforce logout failed.'
