@@ -3,5 +3,5 @@
     <apiVersion>48.0</apiVersion>
     <availableInTouch>false</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
-    <label>ListClasses</label>
+    <label>MyPage</label>
 </ApexPage>

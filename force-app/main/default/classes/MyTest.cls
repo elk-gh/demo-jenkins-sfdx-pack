@@ -3,9 +3,13 @@ private class MyTest {
 
     @isTest
     static void myUnitTest() {
-        //MyClass demo = new MyClass();
-        //System.assertEquals(demo.getAppVersion(), '1.0.0');
-        // Uncomment the following line to cause a build failure
-        // System.assert(false);
+        PageReference pr=Page.MyPage;
+        Test.setCurrentPage(pr);
+
+        Test.startTest();
+        MyClass mc = new MyClass();
+        Test.stopTest();
+
+        System.assertEquals(2, mc.classes.size());
     }
 }
