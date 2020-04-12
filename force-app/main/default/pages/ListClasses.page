@@ -1,0 +1,11 @@
+<apex:page controller="MyClass" lightningStylesheets="true">
+    <apex:pageBlock title="Hola {!$User.FirstName}!">
+        Esta viendo las clases de Apex de esta instancia.
+    </apex:pageBlock>
+    <apex:pageBlock title="Clases">
+        <apex:pageBlockTable value="{!classes}" var="class">
+            <apex:column value="{!class.Id}"/>
+            <apex:column value="{!class.Name}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
