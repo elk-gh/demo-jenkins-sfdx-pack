@@ -70,6 +70,17 @@ node {
                 bat returnStatus: true, script: "\"${toolbelt}\" force:org:open"
 
             }
+            
+            // -------------------------------------------------------------------------
+            // Get link to open new scratch org.
+            // -------------------------------------------------------------------------
+
+            stage('Get Link To Open Scratch Org') {
+                rc = bat returnStatus: true, script: "\"${toolbelt}\" force:org:open"
+                if (rc != 0) {
+                    error 'Salesforce cannot get scratch org open link.'
+                }
+            }
 
 
             // -------------------------------------------------------------------------
