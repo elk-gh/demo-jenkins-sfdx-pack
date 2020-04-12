@@ -59,7 +59,7 @@ node {
 
             
             //Comment to avoid Scratch  Org Limit per Day
-            
+            /*
             // -------------------------------------------------------------------------
             // Create new scratch org to test your code.
             // -------------------------------------------------------------------------
@@ -133,7 +133,7 @@ node {
                     error 'Salesforce cannot get scratch org open link.'
                 }
             }
-            
+            */
             
             //Comment to not delete the scratch org
             /*
@@ -150,7 +150,7 @@ node {
             */
             
             //Comment to not create a package
-            /*
+            
             // -------------------------------------------------------------------------
             // Create package version.
             // -------------------------------------------------------------------------
@@ -222,8 +222,21 @@ node {
                     error 'Salesforce unit test run in pacakge install scratch org failed.'
                 }
             }
+            
+            // -------------------------------------------------------------------------
+            // Get link to open new scratch org.
+            // -------------------------------------------------------------------------
 
+            stage('Get Link To Open Scratch Org') {
+                rc = bat returnStatus: true, script: "\"${toolbelt}\" force:org:open"
+                if (rc != 0) {
+                    error 'Salesforce cannot get scratch org open link.'
+                }
+            }
+            
 
+            //Comment to not delete the scratch org
+            /*
             // -------------------------------------------------------------------------
             // Delete package install scratch org.
             // -------------------------------------------------------------------------
